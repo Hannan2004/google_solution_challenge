@@ -33,24 +33,6 @@ To run the Water Health Predictor locally, follow these steps:
     ```bash
     git clone https://github.com/your-username/water-health-predictor.git
     ```
-
-2. Install dependencies:
-
-    ```bash
-    cd water-health-predictor
-    npm install  # or any other package manager you are using
-    ```
-
-3. Configure API keys:
-
-    Update the configuration file with your API keys for Google Cloud, TensorFlow, Gemini API, etc.
-
-4. Run the application:
-
-    ```bash
-    npm start  # or any other command to start your application
-    ```
-
 ## Usage
 
 Describe how users can use your application and what they can expect from it. Provide examples, code snippets, or screenshots to illustrate its functionality.
