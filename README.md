@@ -31,7 +31,7 @@ To run the Water Health Predictor locally, follow these steps:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/water-health-predictor.git
+    git clone https://github.com/Hannan2004/google_solution_challenge
     ```
 ## Usage
 
