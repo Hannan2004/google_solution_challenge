@@ -101,12 +101,12 @@ asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_until_complete(check_clients())
 asyncio.get_event_loop().run_forever()
 
-
 """
 sample use in JS (not making another file for this):
 
 let socket = new WebSocket('127.0.0.1:4000');
 socket.onmessage = ({ data }) => {
+  // data is a stringified JSON array 
   console.log(JSON.parse(data));
 }
 """
