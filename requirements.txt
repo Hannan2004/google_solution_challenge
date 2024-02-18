@@ -7,3 +7,4 @@ tensorflow
 
 # for the pseudo-sensor... thing
 asyncio
+websockets
