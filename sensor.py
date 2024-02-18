@@ -1,8 +1,13 @@
 import asyncio
 import csv
+from joblib import load
 import json
 import random
+
+# from sklearn.pipeline import Pipeline
 import websockets
+
+pipe = load("./ml/out/model.joblib")
 
 indices = {
     "Iron": 0,
@@ -25,7 +30,7 @@ indices = {
 
 data = []
 
-TIME_STAMP = 0.5 * 60 # change this to whatever time in seconds you want
+TIME_STAMP = 1  # change this to whatever time in seconds you want
 HISTORY_FILE = "./history.csv"
 
 with open("./ml/sample.csv", "r") as csvfile:
@@ -88,6 +93,9 @@ async def send_regular_data(websocket):
         data1[i] * wobbly() / T + data2[i] * (T - wobbly()) / T
         for i in range(len(indices.keys()))
     ]
+
+    dataN.append(pipe.predict([dataN]).tolist()[0][0])
+
     await websocket.send(json.dumps(dataN))
 
     write_to_history(dataN)
