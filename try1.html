@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="myLineChart" width="600" height="400"></canvas>
+
+    <script>
+        // Function to fetch data and plot the graph
+        async function fetchDataAndPlotGraph() {
+            // Fetch the CSV file
+            const response = await fetch('sample.csv');
+            const data = await response.text();
+
+            // Parse the CSV data
+            const rows = data.split('\n').slice(1); // Exclude header row if present
+            const labels = [];
+            const turbidityValues = [];
+            const chlorineValues = [];
+
+            // Extract data from each row
+            rows.forEach(row => {
+                const columns = row.split(',');
+                const label = columns[0]; // Assuming the label is in the first column
+                const turbidity = Number(columns[1]); // Assuming turbidity is in the second column
+                const chlorine = Number(columns[2]); // Assuming chlorine is in the third column
+
+                labels.push(label);
+                turbidityValues.push(turbidity);
+                chlorineValues.push(chlorine);
+            });
+
+            // Create chart data
+            const chartData = {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Turbidity',
+                        data: turbidityValues,
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Chlorine',
+                        data: chlorineValues,
+                        fill: false,
+                        borderColor: 'rgb(255, 99, 132)',
+                        tension: 0.1
+                    }
+                ]
+            };
+
+            // Configuration options
+            const config = {
+                type: 'line',
+                data: chartData
+            };
+
+            // Get the canvas element
+            const ctx = document.getElementById('myLineChart').getContext('2d');
+
+            // Create the line chart
+            const myLineChart = new Chart(ctx, config);
+        }
+
+        // Function to update data and chart
+        async function updateDataAndChart() {
+            // Fetch updated data
+            const response = await fetch('updated_sample.csv');
+            const data = await response.text();
+
+            // Parse the updated CSV data
+            const rows = data.split('\n').slice(1); // Exclude header row if present
+            const labels = [];
+            const turbidityValues = [];
+            const chlorineValues = [];
+
+            // Extract data from each row
+            rows.forEach(row => {
+                const columns = row.split(',');
+                const label = columns[0]; // Assuming the label is in the first column
+                const turbidity = Number(columns[1]); // Assuming turbidity is in the second column
+                const chlorine = Number(columns[2]); // Assuming chlorine is in the third column
+
+                labels.push(label);
+                turbidityValues.push(turbidity);
+                chlorineValues.push(chlorine);
+            });
+
+            // Update chart data
+            myLineChart.data.labels = labels;
+            myLineChart.data.datasets[0].data = turbidityValues;
+            myLineChart.data.datasets[1].data = chlorineValues;
+            myLineChart.update(); // Update the chart
+        }
+
+        // Call the function to fetch initial data and plot the graph
+        fetchDataAndPlotGraph();
+
+        // Call the function to update data and chart at regular intervals (e.g., every 5 seconds)
+        setInterval(updateDataAndChart, 5000); // Update every 5 seconds
+    </script>
+</body>
+</html>
