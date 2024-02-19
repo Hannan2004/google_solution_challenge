@@ -3,7 +3,7 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 
 # Authenticate with Firebase
-cred = credentials.Certificate(' E:\Solution_Challenge\google_solution_challenge\frontend\serviceAccountKey.json')  # Path to your service account key file
+cred = credentials.Certificate('E:\Solution_Challenge\google_solution_challenge\frontend\serviceAccountKey.json')  # Path to your service account key file
 firebase_admin.initialize_app(cred)
 
 # Access Firestore
@@ -24,8 +24,8 @@ if __name__ == "__main__":
     # Assuming you have user_id and potability_data
     user_id = "unique_user_id"
     potability_data = {
-        'parameter1': value1,
-        'parameter2': value2,
+        'parameter1': 1.3,
+        'parameter2': 3,
         # Add more parameters as needed
     }
 
