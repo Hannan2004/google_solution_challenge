@@ -1,0 +1,154 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8"> 
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge"> 
+	<meta name="viewport"
+		content="width=device-width, 
+				initial-scale=1.0"> 
+	<title>Aquacare</title> 
+	<link rel="stylesheet"
+		href="style.css"> 
+	<link rel="stylesheet"
+		href="responsive.css"> 
+</head> 
+
+<body> 
+	
+	<!-- for header part -->
+	<header> 
+
+		<div class="logosec"> 
+			<div class="logo">Aquacare</div>
+		</div> 
+
+		<div class="searchbar"> 
+			<input type="text"
+				placeholder="Search"> 
+			<div class="searchbtn"> 
+			<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+					class="icn srchicn"
+					alt="search-icon"> 
+			</div> 
+		</div> 
+
+		<div class="message"> 
+			<div class="circle"></div> 
+			<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
+				class="icn"
+				alt=""> 
+			<div class="dp"> 
+			<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+					class="dpicn"
+					alt="dp"> 
+			</div> 
+		</div> 
+
+	</header> 
+
+	<div class="main-container"> 
+		<div class="navcontainer"> 
+			<nav class="nav"> 
+				<div class="nav-upper-options"> 
+					<div class="nav-option option1"> 
+						<a href="main.html"> Dashboard</a> 
+					</div> 
+
+					<div class="option2 nav-option"> 
+						<h3> Monitoring</h3> 
+					</div> 
+
+					<div class="nav-option option3"> 
+						<a href="map.html"> Map view</a> 
+					</div> 
+
+					<div class="nav-option option4"> 
+						<h3> Notifications</h3> 
+					</div> 
+
+					<div class="nav-option option5"> 
+						<h3> Profile</h3> 
+					</div> 
+
+					<div class="nav-option option6"> 
+						<h3> Feedback</h3> 
+					</div> 
+
+					<div class="nav-option logout">  
+						<h3>Logout</h3> 
+					</div> 
+
+				</div> 
+			</nav> 
+		</div> 
+		<div class="main"> 
+
+			<div class="searchbar2"> 
+				<input type="text"
+					name=""
+					id=""
+					placeholder="Search"> 
+				<div class="searchbtn"> 
+				<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+						class="icn srchicn"
+						alt="search-button"> 
+				</div> 
+			</div> 
+
+            <div class="map">
+                <div style="overflow:hidden;max-width:100%;width:100%;height:500px;"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Mumbai,+Maharashtra,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="our-googlemap-code" rel="nofollow" href="https://www.bootstrapskins.com/themes" id="enable-map-data">premium bootstrap themes</a><style>#my-map-canvas img{max-height:none;max-width:none!important;background:none!important;}</style></div>
+            </div>
+		    
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Water Potability</th>
+                            <th>Distance (km)</th> <!-- Additional column -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hannan</td>
+                            <td>Parel</td>
+                            <td>Potable</td>
+                            <td>3.5</td> <!-- Example distance value -->
+                        </tr>
+                        <tr>
+                            <td>Shreerang</td>
+                            <td>Thane</td>
+                            <td>Non-Potable</td>
+                            <td>8.2</td>
+                        </tr>
+                        <tr>
+                            <td>Vedika</td>
+                            <td>Dadar</td>
+                            <td>Potable</td>
+                            <td>2.1</td>
+                        </tr>
+                        <tr>
+                            <td>Ishwari</td>
+                            <td>Chembur</td>
+                            <td>Non-Potable</td>
+                            <td>6.7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+        
+        </div> 
+
+	</div> 
+
+	<script src="./index.js"></script> 
+</body> 
+</html>
