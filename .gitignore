@@ -4,3 +4,5 @@ venv
 
 ml/data/*
 !ml/data
+
+history.csv
